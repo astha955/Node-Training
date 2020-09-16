@@ -4,6 +4,7 @@
     Calculator.Addition = function () {
         return this.FirstNumber + this.SecondNumber;
     };
+   
     Calculator.Subtraction = function () {
         return this.FirstNumber - this.SecondNumber;
     };
@@ -14,7 +15,7 @@
         return this.FirstNumber / this.SecondNumber;
     };
     return Calculator;
-})();
+})
 
 Calculator.FirstNumber = 10;
 Calculator.SecondNumber = 30;
