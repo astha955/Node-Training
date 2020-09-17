@@ -1,5 +1,3 @@
-
-
 export class ArrayClass {
     private  trainees : string[];
 constructor(){
