@@ -1,25 +1,26 @@
- var Calculator = (function () {
-    function Calculator() {
+"use strict";
+exports.__esModule = true;
+exports.Calculator = void 0;
+var Calculator = /** @class */ (function () {
+    function Calculator(first, second) {
+        this.first = first;
+        this.second = second;
+        this.firstNumber = first;
+        this.secondNumber = second;
     }
-    Calculator.Addition = function () {
-        return this.FirstNumber + this.SecondNumber;
+    Calculator.prototype.Addition = function () {
+        return this.firstNumber + this.secondNumber;
     };
-   
-    Calculator.Subtraction = function () {
-        return this.FirstNumber - this.SecondNumber;
+    Calculator.prototype.Subtraction = function () {
+        return this.firstNumber - this.secondNumber;
     };
-    Calculator.Multiplication = function () {
-        return this.FirstNumber * this.SecondNumber;
+    Calculator.prototype.Multiplication = function () {
+        return this.firstNumber * this.secondNumber;
     };
-    Calculator.Division = function () {
-        return this.FirstNumber / this.SecondNumber;
+    Calculator.prototype.Division = function () {
+        return this.firstNumber / this.secondNumber;
     };
     return Calculator;
-})
-
-Calculator.FirstNumber = 10;
-Calculator.SecondNumber = 30;
-console.log(Calculator.Addition());
-console.log(Calculator.Subtraction());
-console.log(Calculator.Multiplication());
-console.log(Calculator.Division());
+}());
+exports.Calculator = Calculator;
+exports["default"] = Calculator;

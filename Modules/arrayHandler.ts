@@ -1,39 +1,51 @@
-const trainees=['Astha', 'Priyanka', 'Ankita'];
+
 
 export class ArrayClass {
+    private  trainees : string[];
+constructor(){
+    this.trainees=['Astha', 'Priyanka', 'Ankita'];
+}
     
     public newTrainees(newJoinser : string) : string[]
     {
-        trainees.push(newJoinser);
+        this.trainees.push(newJoinser )
       
-        return trainees;
+        return this.trainees;
     }
     public noOfTrainees() : number{
-        return trainees.length;
+        return this.trainees.length;
     }
     public addAtTop(trainee : string) : string[]{
-        trainees.unshift(trainee);
-        return trainees;
+        this.trainees.unshift(trainee);
+        return this.trainees;
     }
     public addTrainee(trainee : string) : any {
-        if(trainees.includes(trainee))
+        if(this.trainees.includes(trainee))
         {
             console.log('Trainee already exist');
         }
         else{
-        trainees.push(trainee);
-        return trainees;
+        this.trainees.push(trainee);
+        return this.trainees;
         }
     }
     public removeTrainee() : String[]{
-       trainees.slice(1,2);
-       return trainees;
+       this.trainees.splice(1,2);
+       return this.trainees;
     }
     public sortTrainee() : String[]
     {
-     trainees.sort();
-     return trainees;
+     this.trainees.sort();
+     return this.trainees;
     }
 
 }
 export default ArrayClass
+
+let obj =new ArrayClass();
+console.log("new trainees    ::" + obj.newTrainees('shina'));
+console.log("no of trainees  ::" + obj.noOfTrainees());
+console.log("add at begin    ::" + obj.addAtTop('malini'));
+console.log("add at end      ::" + obj.addTrainee('krishna'));
+console.log("remove          ::" + obj.removeTrainee());
+console.log("sort trainees   ::" + obj.sortTrainee());

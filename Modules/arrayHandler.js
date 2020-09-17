@@ -6,7 +6,7 @@ var ArrayClass = /** @class */ (function () {
         this.trainees = ['Astha', 'Priyanka', 'Ankita'];
     }
     ArrayClass.prototype.newTrainees = function (newJoinser) {
-        this.trainees = newJoinser.split(" ");
+        this.trainees.push(newJoinser);
         return this.trainees;
     };
     ArrayClass.prototype.noOfTrainees = function () {
@@ -26,14 +26,21 @@ var ArrayClass = /** @class */ (function () {
         }
     };
     ArrayClass.prototype.removeTrainee = function () {
-        this.trainees = this.trainees.slice(1, 2);
+        this.trainees.splice(1, 2);
         return this.trainees;
     };
     ArrayClass.prototype.sortTrainee = function () {
-        this.trainees = this.trainees.sort();
+        this.trainees.sort();
         return this.trainees;
     };
     return ArrayClass;
 }());
 exports.ArrayClass = ArrayClass;
 exports["default"] = ArrayClass;
+var obj = new ArrayClass();
+console.log("new trainees    ::" + obj.newTrainees('shina'));
+console.log("no of trainees  ::" + obj.noOfTrainees());
+console.log("add at begin    ::" + obj.addAtTop('malini'));
+console.log("add at end      ::" + obj.addTrainee('krishna'));
+console.log("remove          ::" + obj.removeTrainee());
+console.log("sort trainees   ::" + obj.sortTrainee());
