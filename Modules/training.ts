@@ -1,12 +1,18 @@
-module.exports.training=function training (traineeName: string,  duration: string , noOfModules: number,moduleList: Array<String>,trainingStatus :Function )
+export class Training {
+traineeName : string;
+duration :string;
+noOfModules :number;
+moduleList :string[];
+constructor(){        
+this.traineeName = '';
+this.duration = '';
+this.noOfModules = 0;
+this.moduleList =[];
+}
+trainingStatus=function(moduleList)
 {
-var traineeName = traineeName;
-var duration = duration;
-var noOfModules = noOfModules;
-var moduleList =moduleList
-trainingStatus=function()
-{
-    console.log("Training Done Successfully with Modules"+moduleList);
+
+console.log("Training Done Successfully with Modules"+moduleList);
 }
 
 }
