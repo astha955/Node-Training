@@ -20,17 +20,21 @@ switch (Number(choice)) {
         console.log(obj.noOfTrainees());
         break;
     case 3:
+        var t;
         r1.question("enter the name", trainee=>{
-        var t= trainee;
+        t= trainee;
    
-        console.log(obj.addAtTop(t));
     })
+    
+    console.log(obj.addAtTop(t));
         break;
     case 4:
+        var t;
         r1.question("enter the name", trainee=>{
-            var t= trainee;
-        console.log(obj.addTrainee(trainee));
+            t= trainee;
+        
         })
+        console.log(obj.addTrainee(t));
         break;
     case 5:
         console.log(obj.removeTrainee());

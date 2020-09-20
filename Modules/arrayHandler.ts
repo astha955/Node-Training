@@ -1,41 +1,41 @@
 export class ArrayClass {
-    private  trainees : string[];
+private  trainees : string[];
 constructor(){
-    this.trainees=['Astha', 'Priyanka', 'Ankita'];
+this.trainees=['Astha', 'Priyanka', 'Ankita'];
 }
+
+public newTrainees(newJoinser : string) : string[]
+{
+    this.trainees.push(newJoinser )
     
-    public newTrainees(newJoinser : string) : string[]
+    return this.trainees;
+}
+public noOfTrainees() : number{
+    return this.trainees.length;
+}
+public addAtTop(trainee : string) : string[]{
+    this.trainees.unshift(trainee);
+    return this.trainees;
+}
+public addTrainee(trainee : string) : any {
+    if(this.trainees.includes(trainee))
     {
-        this.trainees.push(newJoinser )
-      
-        return this.trainees;
+        console.log('Trainee already exist');
     }
-    public noOfTrainees() : number{
-        return this.trainees.length;
+    else{
+    this.trainees.push(trainee);
+    return this.trainees;
     }
-    public addAtTop(trainee : string) : string[]{
-        this.trainees.unshift(trainee);
-        return this.trainees;
-    }
-    public addTrainee(trainee : string) : any {
-        if(this.trainees.includes(trainee))
-        {
-            console.log('Trainee already exist');
-        }
-        else{
-        this.trainees.push(trainee);
-        return this.trainees;
-        }
-    }
-    public removeTrainee() : String[]{
-       this.trainees.splice(1,2);
-       return this.trainees;
-    }
-    public sortTrainee() : String[]
-    {
-     this.trainees.sort();
-     return this.trainees;
-    }
+}
+public removeTrainee() : String[]{
+    this.trainees.splice(1,2);
+    return this.trainees;
+}
+public sortTrainee() : String[]
+{
+    this.trainees.sort();
+    return this.trainees;
+}
 
 }
 export default ArrayClass

@@ -1,12 +1,17 @@
 "use strict";
 exports.__esModule = true;
-module.exports.training = function training(traineeName, duration, noOfModules, moduleList, trainingStatus) {
-    var traineeName = traineeName;
-    var duration = duration;
-    var noOfModules = noOfModules;
-    var moduleList = moduleList;
-    trainingStatus = function () {
-        console.log("Training Done Successfully with Modules" + moduleList);
+exports.Training = void 0;
+var Training = /** @class */ (function () {
+    function Training() {
+        this.traineeName = '';
+        this.duration = '';
+        this.noOfModules = 0;
+        this.moduleList = [];
+    }
+    Training.prototype.trainingStatus = function () {
+        return "Training Done Successfully with Modules " + this.moduleList;
     };
-};
-exports["default"] = training;
+    return Training;
+}());
+exports.Training = Training;
+exports["default"] = Training;

@@ -1,27 +1,33 @@
 "use strict";
 exports.__esModule = true;
-var training = require('./training.ts');
+exports.ObjectClass = void 0;
+var training = require("./training");
 var ObjectClass = /** @class */ (function () {
     function ObjectClass() {
+        this.obj = new training.Training();
+        this.obj.traineeName = 'Astha';
+        this.obj.duration = '4 months';
+        this.obj.noOfModules = 4;
+        this.obj.moduleList = ['c', 'Salesforce', 'NodeJs'];
     }
     ObjectClass.prototype.startTraining = function () {
-        training.traineeName = "Astha";
-        training.duration = "2 months";
-        training.noOfModules = 5;
-        training.moduleList = ["c", "Salesforce", "NodeJs", "Angular"];
+        console.log(this.obj);
     };
-    ObjectClass.prototype.newModule = function (callback) {
-        training.moduleList.push(".net");
-        if (training.moduleList.length == training.noOfModules) {
-            callback();
+    ObjectClass.prototype.newModule = function (name, callback) {
+        this.obj.moduleList.push(name);
+        if (this.obj.noOfModules == this.obj.moduleList.length) {
+            callback(this.obj.trainingStatus());
         }
         else {
-            console.log("Training not completed");
+            callback("More modules to be covered");
         }
     };
     return ObjectClass;
 }());
+exports.ObjectClass = ObjectClass;
 exports["default"] = ObjectClass;
-var obj = new ObjectClass();
-obj.startTraining();
-obj.newModule(training.trainingStatus);
+var o = new ObjectClass();
+o.startTraining();
+o.newModule('.net', function (status) {
+    console.log(status);
+});

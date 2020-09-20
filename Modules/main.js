@@ -19,16 +19,18 @@ r1.question("enter your choice 1.newTrainees 2.numberOfTrainee 3.addAtTop 4.addA
             console.log(obj.noOfTrainees());
             break;
         case 3:
+            var t;
             r1.question("enter the name", function (trainee) {
-                var t = trainee;
-                console.log(obj.addAtTop(t));
+                t = trainee;
             });
+            console.log(obj.addAtTop(t));
             break;
         case 4:
+            var t;
             r1.question("enter the name", function (trainee) {
-                var t = trainee;
-                console.log(obj.addTrainee(trainee));
+                t = trainee;
             });
+            console.log(obj.addTrainee(t));
             break;
         case 5:
             console.log(obj.removeTrainee());

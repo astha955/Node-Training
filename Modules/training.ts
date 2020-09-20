@@ -9,11 +9,11 @@ this.duration = '';
 this.noOfModules = 0;
 this.moduleList =[];
 }
-trainingStatus=function(moduleList)
+
+public trainingStatus():any
 {
-
-console.log("Training Done Successfully with Modules"+moduleList);
+return "Training Done Successfully with Modules "+this.moduleList;
 }
 
 }
-export default training
+export default Training

@@ -1,0 +1,10 @@
+const path =require('path')
+ const express = require('express')
+const app = express()
+console.log(__dirname)
+console.log(__filename)
+const loginDirectoryPath = path.join(__dirname,'../views')
+app.use(express.static(loginDirectoryPath))
+app.listen(3000,()=>{
+    console.log('server is upon port 3000')
+})

@@ -1,26 +1,35 @@
-var training = require('./training.ts');
-class ObjectClass {
+import * as training from './training';
+export class ObjectClass {
+public obj:training.Training;
+constructor(){
+this.obj=new training.Training();
+this.obj.traineeName='Astha';
+this.obj.duration='4 months';
+this.obj.noOfModules=4;
+this.obj.moduleList=['c','Salesforce','NodeJs'];
+}
 startTraining():any 
 {
-training.traineeName="Astha";
-training.duration="2 months";
-training.noOfModules=5;
-training.moduleList=["c","Salesforce","NodeJs","Angular"];
+
+console.log(this.obj);
 }
-newModule(callback:Function)
+newModule(name,callback)
 {
-    training.moduleList.push(".net");
-    if(training.moduleList.length==training.noOfModules)
-    {
-        callback();
-    }
-    else{
-        console.log("Training not completed");
-    }
+this.obj.moduleList.push(name);
+if(this.obj.noOfModules==this.obj.moduleList.length)
+{
+callback(this.obj.trainingStatus());
+}
+else{
+callback("More modules to be covered");
+}
+
 }
 }
 export default ObjectClass
-let obj=new ObjectClass();
-obj.startTraining();
-obj.newModule(training.trainingStatus);
+let o=new ObjectClass();
+o.startTraining();
+o.newModule('.net',(status)=>{
+console.log(status);
+})
 
